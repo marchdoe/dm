@@ -30,27 +30,6 @@ class About extends Component {
     return (
       <Wrapper wrap>
 
-        {/* <Aside w={[ 1, 1, 1 / 3  ]} p={3}>
-          <Heading color={color.blue} f={5} mb={4} is='h1'>Doug March</Heading>
-
-          <Flex wrap>
-            <Text w={1 / 2}>Email</Text>
-            <Link w={1 / 2} href='mailto:dougmarch@gmail.com'>dougmarch@gmail.com</Link>
-
-            <Text w={1 / 2}>Home</Text>
-            <Link w={1 / 2} href='#'>Arlington, VA</Link>
-
-            <Text w={1 / 2}>Twitter</Text>
-            <Link w={1 / 2} href='http://twitter.com/marchdoe'>@marchdoe</Link>
-
-            <Text w={1 / 2}>LinkedIn</Text>
-            <Link w={1 / 2} href='http://linkedin.com/in/dougmarch'>/dougmarch</Link>
-
-            <Text w={1 / 2}>Github</Text>
-            <Link w={1 / 2} href='http://github.com/marchdoe'>marchoe</Link>
-          </Flex>
-        </Aside> */}
-
         <Content w={[ 1 ]} p={3}>
 
           <Text color={'gray7'} f={[4, 5]} mb={4}>
