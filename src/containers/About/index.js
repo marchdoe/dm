@@ -32,11 +32,11 @@ class About extends Component {
 
         <Content w={[ 1 ]} p={3}>
 
-          <Text color={'gray7'} f={[4, 5]} mb={4}>
+          {/* <Text color={'gray7'} f={[4, 5]} mb={4}>
             Ut erat justo, porta vel ligula congue, tempus aliquet sem. Pellentesque porta tristique orci. Mauris sed dui erat. Nulla arcu neque, vestibulum id laoreet id, tincidunt non diam. Vestibulum bibendum elit vel ex consectetur, venenatis finibus tellus facilisis.
-          </Text>
+          </Text> */}
 
-          <StyledSkills py={1} mb={4}>
+          {/* <StyledSkills py={1} mb={4}>
             <Heading pt={3} px={3} mb={1} f={1} is='h4' color={color.green} caps>Skills</Heading>
             <Flex mb={3} wrap>
               <Box w={[ 1, 1 / 3 ]} px={3} mt={3} mb={3}>
@@ -65,7 +65,7 @@ class About extends Component {
                 <Progress color={'#0088cc'} value={4 / 10} />
               </Box>
             </Flex>
-          </StyledSkills>
+          </StyledSkills> */}
 
           <Heading mb={3} f={1} is='h4' color={color.green} caps>Experience</Heading>
           <Positions />

@@ -24,9 +24,9 @@ class Home extends Component {
         <StyledHeading py={3} f={4} is={'h2'}>
           <Link to={'posts'}>find stuff</Link>
         </StyledHeading>
-        <StyledHeading py={3} f={4} is={'h2'}>
+        {/* <StyledHeading py={3} f={4} is={'h2'}>
           <Link to={'projects'}>create things</Link>
-        </StyledHeading>
+        </StyledHeading> */}
       </Wrapper>
     )
   }

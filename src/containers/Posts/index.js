@@ -35,7 +35,7 @@ class Posts extends Component {
   renderPosts () {
     return this.props.posts.map((post, index) => {
       return (
-        <StyledArticle pr={5} py={4} key={post.sys.id}>
+        <StyledArticle py={[3, 3, 4]} key={post.sys.id}>
           <StyledHeading f={4} is={'h2'}>
             <Link href={post.fields.source}>
               {post.fields.title}

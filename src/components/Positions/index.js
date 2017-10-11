@@ -39,7 +39,7 @@ const StyledBox = styled(Box)`
 
     li:before {
       content: "•";
-      margin: 0 .5em .1em -.85em;
+      margin: 0 .5em 0 -1em;
       color: ${color.blue};
     }
   }
@@ -59,7 +59,7 @@ class Positions extends Component {
   renderPositions () {
     return this.props.positions.sort((a, b) => a.fields.order > b.fields.order).map((position, index) => {
       return (
-        <Flex wrap mb={5} key={position.sys.id}>
+        <Flex wrap mb={[4, 4, 5]} key={position.sys.id}>
           <StyledPositionTitle is='h2' w={1} pb={3} mb={3} f={3}>
             {position.fields.company}
             <Small ml={3} f={1}>{position.fields.date}</Small>
