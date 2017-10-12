@@ -1,6 +1,6 @@
 import React from 'react'
 import { configure, addDecorator } from '@storybook/react'
-import { setDefaults } from '@storybook/addon-info'
+import { setOptions } from '@storybook/addon-options';
 
 import { Provider } from 'rebass'
 
@@ -14,19 +14,18 @@ addDecorator((story) => (
   </Provider>
 ))
 
-setDefaults({
-  inline: true,
-  header: false,
-  name: 'CRA Kitchen Sink',
+setOptions({
+  name: 'Doug March',
   url: 'https://doug-march.com',
+  addonsPanelInRight: true,
+  goFullScreen: false,
+  showStoriesPanel: true,
+  showAddonsPanel: true,
+  showSearchBox: false,
+  sidebarAnimation: false,
+  sortStoriesByKind: false,
   hierarchySeparator: /\/|\./
-  // goFullScreen: false,
-  // showLeftPanel: true,
-  // showDownPanel: true,
-  // showSearchBox: false,
-  // downPanelInRight: true,
-  // sortStoriesByKind: false
-})
+});
 
 function loadStories () {
   const req = require.context('../src/components', true, /(\.story\.js$)|(\.story\.jsx$)/)
