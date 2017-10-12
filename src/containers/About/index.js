@@ -4,11 +4,10 @@ import {
   Box,
   Flex,
   Heading,
-  Progress,
   Small,
   Text } from 'rebass'
 
-import { color, border } from '../../theme'
+import { color } from '../../theme'
 
 import Positions from '../../components/Positions'
 
@@ -20,10 +19,10 @@ const Wrapper = styled(Flex)`
 
 const Content = styled(Box)``
 
-const StyledSkills = styled(Box)`
-  background-color: ${color.white};
-  border-radius: ${border.largeRadius};
-`
+// const StyledSkills = styled(Box)`
+//   background-color: ${color.white};
+//   border-radius: ${border.largeRadius};
+// `
 
 class About extends Component {
   render () {
