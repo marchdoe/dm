@@ -22,7 +22,7 @@ setOptions({
   showStoriesPanel: true,
   showAddonsPanel: true,
   showSearchBox: false,
-  sidebarAnimation: false,
+  sidebarAnimations: false,
   sortStoriesByKind: false,
   hierarchySeparator: /\/|\./
 });
