@@ -44,17 +44,6 @@
   dependencies:
     "@storybook/addons" "^3.3.0-alpha.2"
 
-"@storybook/addon-storyshots@3.3.0-alpha.2":
-  version "3.3.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-3.3.0-alpha.2.tgz#7ccc9e388bc2ef2322cb1c71e44fa50b5b251c8d"
-  dependencies:
-    babel-runtime "^6.26.0"
-    glob "^7.1.2"
-    global "^4.3.2"
-    jest-specific-snapshot "^0.2.0"
-    prop-types "^15.6.0"
-    read-pkg-up "^2.0.0"
-
 "@storybook/addons@^3.3.0-alpha.2":
   version "3.3.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.3.0-alpha.2.tgz#836a664e84104972c718c446e68a993dbd497fcc"
@@ -4676,12 +4665,6 @@ jest-snapshot@^20.0.3:
     natural-compare "^1.4.0"
     pretty-format "^20.0.3"
 
-jest-specific-snapshot@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/jest-specific-snapshot/-/jest-specific-snapshot-0.2.0.tgz#271422a09b87cff42a70651634b70918135c6330"
-  dependencies:
-    jest-snapshot "^20.0.3"
-
 jest-util@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-20.0.3.tgz#0c07f7d80d82f4e5a67c6f8b9c3fe7f65cfd32ad"
@@ -7487,8 +7470,8 @@ styled-components@^2.0.1, styled-components@^2.1.2:
     supports-color "^3.2.3"
 
 styled-components@^2.2.0:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.2.2.tgz#a00c4b7a432ff77e5fb962ec1fbc030248d27171"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.2.3.tgz#154575c269880c840f903f580287dab155cf684c"
   dependencies:
     buffer "^5.0.3"
     css-to-react-native "^2.0.3"

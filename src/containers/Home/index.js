@@ -19,14 +19,11 @@ class Home extends Component {
     return (
       <Wrapper>
         <StyledHeading py={3} f={4} is={'h2'}>
-          <Link to={'about'}>I make websites</Link>
+          <Link to={'about'}>About</Link>
         </StyledHeading>
         <StyledHeading py={3} f={4} is={'h2'}>
-          <Link to={'posts'}>find stuff</Link>
+          <Link to={'posts'}>Random Links</Link>
         </StyledHeading>
-        {/* <StyledHeading py={3} f={4} is={'h2'}>
-          <Link to={'projects'}>create things</Link>
-        </StyledHeading> */}
       </Wrapper>
     )
   }

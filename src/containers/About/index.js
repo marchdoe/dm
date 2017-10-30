@@ -32,7 +32,7 @@ class About extends Component {
         <Content w={[ 1 ]} p={3}>
 
           {/* <Text color={'gray7'} f={[4, 5]} mb={4}>
-            Ut erat justo, porta vel ligula congue, tempus aliquet sem. Pellentesque porta tristique orci. Mauris sed dui erat. Nulla arcu neque, vestibulum id laoreet id, tincidunt non diam. Vestibulum bibendum elit vel ex consectetur, venenatis finibus tellus facilisis.
+            Currently available for contract work.
           </Text> */}
 
           {/* <StyledSkills py={1} mb={4}>
