@@ -41,5 +41,5 @@ jobs:
           name: Maybe Deploy
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              now --public --docker -t ${NOW_TOKEN} && now -t ${NOW_TOKEN} alias dm
+              now --public --docker -t ${NOW_TOKEN} && now -t ${NOW_TOKEN} alias doug-march.com
             fi
