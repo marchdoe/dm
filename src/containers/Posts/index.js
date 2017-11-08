@@ -28,20 +28,24 @@ const StyledHeading = styled(Heading)`
 `
 
 class Posts extends Component {
+
   componentWillMount () {
     this.props.fetchPosts()
   }
 
   renderPosts () {
     return this.props.posts.map((post, index) => {
+
+      const hasExcerpt = post.fields.excerpt
+
       return (
         <StyledArticle py={[3, 3, 4]} key={post.sys.id}>
           <StyledHeading f={4} is={'h2'}>
             <Link href={post.fields.source}>
               {post.fields.title}
             </Link>
+            {hasExcerpt ? (<Text pt={2} f={2}>{post.fields.excerpt}</Text>) : ('')}
           </StyledHeading>
-          <Text pt={2} f={2}>{post.fields.excerpt}</Text>
         </StyledArticle>
       )
     })
@@ -57,7 +61,7 @@ class Posts extends Component {
 }
 
 function mapStateToProps (state) {
-  return { posts: state.posts.all }
+  return {posts: state.posts.all}
 }
 
-export default connect(mapStateToProps, { fetchPosts })(Posts)
+export default connect(mapStateToProps, {fetchPosts})(Posts)

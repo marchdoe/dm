@@ -67,6 +67,7 @@ class About extends Component {
           </StyledSkills> */}
 
           <Heading mb={3} f={1} is='h4' color={color.green} caps>Experience</Heading>
+
           <Positions />
 
           <Heading mb={3} f={1} is='h4' color={color.green} caps>Education</Heading>
