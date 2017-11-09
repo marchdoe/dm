@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-snapshot';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { Router, browserHistory } from 'react-router'
@@ -32,7 +32,7 @@ injectGlobal`
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 
-ReactDOM.render(
+render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory} routes={routes} />
   </Provider>

@@ -1,3 +1,5 @@
 {
-  "type": "docker"
+  "type": "docker",
+  "files": ["build"],
+  "public": true
 }
