@@ -3,11 +3,11 @@ jobs:
   checkout_code:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/doug-march.com
+    working_directory: ~/doug-march
     steps:
       - checkout
       - attach_workspace:
-          at: ~/doug-march.com
+          at: ~/doug-march
       - restore_cache:
           keys:
             - yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -23,10 +23,10 @@ jobs:
   # check_vulnerabilities:
   #   docker:
   #     - image: circleci/node:latest
-  #   working_directory: ~/doug-march.com
+  #   working_directory: ~/doug-march
   #   steps:
   #     - attach_workspace:
-  #         at: ~/doug-march.com
+  #         at: ~/doug-march
   #     - run: yarn install
   #     - run: |
   #           if [ "${CIRCLE_BRANCH}" == "master" ]; then
@@ -37,10 +37,10 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/doug-march.com
+    working_directory: ~/doug-march
     steps:
       - attach_workspace:
-          at: ~/doug-march.com
+          at: ~/doug-march
       - run: yarn install
       - run:
           name: yarn build
@@ -58,20 +58,20 @@ jobs:
   deployment:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/doug-march.com
+    working_directory: ~/doug-march
     steps:
       - attach_workspace:
-          at: ~/doug-march.com
+          at: ~/doug-march
       - run: yarn install
       - run: sudo yarn global add now
       - deploy:
           name: Deploy & Alias.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              now build -t ${NOW_TOKEN} -n=circleci-deployment --static
+              now build -t ${NOW_TOKEN} -n=doug-march --static
               now -t ${NOW_TOKEN} alias doug-march.com
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              now build -t ${NOW_TOKEN} -n=circleci-deployment --static
+              now build -t ${NOW_TOKEN} -n=doug-march --static
               now -t ${NOW_TOKEN} alias doug-march-dev.now.sh
             else
               echo "This failed miserably!"
