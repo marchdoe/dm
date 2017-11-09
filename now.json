@@ -1,4 +1,5 @@
 {
-  "type": "docker",
-  "public": true
+  "alias": [
+    "doug-march.com"
+  ]
 }
