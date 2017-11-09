@@ -20,20 +20,20 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
-  check_vulnerabilities:
-    docker:
-      - image: circleci/node:latest
-    working_directory: ~/doug-march.com
-    steps:
-      - attach_workspace:
-          at: ~/doug-march.com
-      - run: yarn install
-      - run: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              yarn validate:dependencies
-            else
-              yarn validate:dependencies || true
-            fi
+  # check_vulnerabilities:
+  #   docker:
+  #     - image: circleci/node:latest
+  #   working_directory: ~/doug-march.com
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/doug-march.com
+  #     - run: yarn install
+  #     - run: |
+  #           if [ "${CIRCLE_BRANCH}" == "master" ]; then
+  #             yarn validate:dependencies
+  #           else
+  #             yarn validate:dependencies || true
+  #           fi
   build:
     docker:
       - image: circleci/node:latest
@@ -81,9 +81,9 @@ workflows:
   test_build_deploy:
     jobs:
       - checkout_code
-      - check_vulnerabilities:
-          requires:
-            - checkout_code
+      # - check_vulnerabilities:
+      #     requires:
+      #       - checkout_code
       - build:
           requires:
             - checkout_code
@@ -94,7 +94,7 @@ workflows:
                 - master
       - deployment:
           requires:
-            - check_vulnerabilities
+            # - check_vulnerabilities
             - build
           filters:
             branches:
