@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-snapshot';
 
 import promise from 'redux-promise'
 import { injectGlobal } from 'styled-components'
@@ -33,7 +33,7 @@ injectGlobal`
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 
-ReactDOM.render(
+render(
   <Provider store={createStoreWithMiddleware(rootReducer)}>
     <App />
   </Provider>
