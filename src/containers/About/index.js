@@ -19,11 +19,6 @@ const Wrapper = styled(Flex)`
 
 const Content = styled(Box)``
 
-// const StyledSkills = styled(Box)`
-//   background-color: ${color.white};
-//   border-radius: ${border.largeRadius};
-// `
-
 class About extends Component {
   render () {
     return (
@@ -34,6 +29,7 @@ class About extends Component {
           {/* <Text color={'gray7'} f={[4, 5]} mb={4}>
             Currently available for contract work.
           </Text> */}
+          
 
           {/* <StyledSkills py={1} mb={4}>
             <Heading pt={3} px={3} mb={1} f={1} is='h4' color={color.green} caps>Skills</Heading>
