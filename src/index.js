@@ -1,5 +1,5 @@
 import React from 'react'
-import { hydrate, render } from 'react-dom';
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { Router, browserHistory } from 'react-router'
@@ -32,16 +32,8 @@ injectGlobal`
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 
-const rootElement = document.getElementById('root');
-
-if (rootElement.hasChildNodes()) {
-  hydrate(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-      <Router history={browserHistory} routes={routes} />
-    </Provider>, rootElement);
-} else {
-  render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-      <Router history={browserHistory} routes={routes} />
-    </Provider>, rootElement);
-}
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <Router history={browserHistory} routes={routes} />
+  </Provider>
+  , document.getElementById('root'))
