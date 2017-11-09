@@ -1,24 +1,104 @@
-machine:
-  environment:
-    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
-  node:
-    version: 7.10.0
-
-dependencies:
-  override:
-    - yarn
-  cache_directories:
-    - ~/.cache/yarn
-  pre:
-    - yarn global add now
-
-test:
-  override:
-    - yarn test
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - now -t ${NOW_TOKEN}
-      - now -t ${NOW_TOKEN} alias doug-march.com
+version: 2
+jobs:
+  checkout_code:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/doug-march.com
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/doug-march.com
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ .Branch }}
+            - yarn-cache-
+      - run: yarn install
+      - save_cache:
+          key: yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths: node_modules
+      - persist_to_workspace:
+          root: .
+          paths: .
+  check_vulnerabilities:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/doug-march.com
+    steps:
+      - attach_workspace:
+          at: ~/doug-march.com
+      - run: yarn install
+      - run: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              yarn validate:dependencies
+            else
+              yarn validate:dependencies || true
+            fi
+  build:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/doug-march.com
+    steps:
+      - attach_workspace:
+          at: ~/doug-march.com
+      - run: yarn install
+      - run:
+          name: yarn build
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              CI=true PUBLIC_URL=https://doug-march.com yarn build
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+              CI=true PUBLIC_URL=https://doug-march-dev.now.sh yarn build
+            else
+              echo "This failed miserably!"
+            fi
+      - persist_to_workspace:
+          root: .
+          paths: .
+  deployment:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/doug-march.com
+    steps:
+      - attach_workspace:
+          at: ~/doug-march.com
+      - run: yarn install
+      - run: sudo yarn global add now
+      - deploy:
+          name: Deploy & Alias.
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              now build -t ${NOW_TOKEN} -n=circleci-deployment --static
+              now -t ${NOW_TOKEN} alias doug-march.com
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+              now build -t ${NOW_TOKEN} -n=circleci-deployment --static
+              now -t ${NOW_TOKEN} alias doug-march-dev.now.sh
+            else
+              echo "This failed miserably!"
+            fi
+workflows:
+  version: 2
+  test_build_deploy:
+    jobs:
+      - checkout_code
+      - check_vulnerabilities:
+          requires:
+            - checkout_code
+      - build:
+          requires:
+            - checkout_code
+          filters:
+            branches:
+              only:
+                - development
+                - master
+      - deployment:
+          requires:
+            - check_vulnerabilities
+            - test_and_report
+            - build
+          filters:
+            branches:
+              only:
+                - development
+                - master
