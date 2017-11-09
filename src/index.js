@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { hydrate, render } from 'react-dom';
 
 import promise from 'redux-promise'
 import { injectGlobal } from 'styled-components'
@@ -33,8 +33,16 @@ injectGlobal`
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(rootReducer)}>
-    <App />
-  </Provider>
-  , document.getElementById('root'))
+const rootElement = document.getElementById('root')
+
+if (rootElement.hasChildNodes()) {
+  hydrate(
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
+      <App />
+    </Provider>, rootElement)
+} else {
+  render(
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
+      <App />
+    </Provider>, rootElement)
+}
