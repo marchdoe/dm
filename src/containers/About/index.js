@@ -17,50 +17,11 @@ const Wrapper = styled(Flex)`
   margin-right: auto;
 `
 
-const Content = styled(Box)``
-
 class About extends Component {
   render () {
     return (
       <Wrapper wrap>
-
-        <Content w={[ 1 ]} p={3}>
-
-          {/* <Text color={'gray7'} f={[4, 5]} mb={4}>
-            Currently available for contract work.
-          </Text> */}
-          
-
-          {/* <StyledSkills py={1} mb={4}>
-            <Heading pt={3} px={3} mb={1} f={1} is='h4' color={color.green} caps>Skills</Heading>
-            <Flex mb={3} wrap>
-              <Box w={[ 1, 1 / 3 ]} px={3} mt={3} mb={3}>
-                <Text f={2}>HTML</Text>
-                <Progress color={'#0088cc'} value={9 / 10} />
-              </Box>
-              <Box w={[ 1, 1 / 3 ]} px={3} mt={3} mb={3}>
-                <Text f={2}>CSS</Text>
-                <Progress color={'#0088cc'} value={9 / 10} />
-              </Box>
-              <Box w={[ 1, 1 / 3 ]} px={3} mt={3} mb={3}>
-                <Text f={2}>Javascript</Text>
-                <Progress color={'#0088cc'} value={4 / 10} />
-              </Box>
-
-              <Box w={[ 1, 1 / 3 ]} px={3} mt={3} mb={3}>
-                <Text f={2}>HTML</Text>
-                <Progress color={'#0088cc'} value={9 / 10} />
-              </Box>
-              <Box w={[ 1, 1 / 3 ]} px={3} mt={3} mb={3}>
-                <Text f={2}>CSS</Text>
-                <Progress color={'#0088cc'} value={9 / 10} />
-              </Box>
-              <Box w={[ 1, 1 / 3 ]} px={3} mt={3} mb={3}>
-                <Text f={2}>Javascript</Text>
-                <Progress color={'#0088cc'} value={4 / 10} />
-              </Box>
-            </Flex>
-          </StyledSkills> */}
+        <Box w={[ 1 ]} p={3}>
 
           <Heading mb={3} f={1} is='h4' color={color.green} caps>Experience</Heading>
 
@@ -79,8 +40,7 @@ class About extends Component {
               <Text f={1}>Concentration in Digital Imaging</Text>
             </Box>
           </Flex>
-
-        </Content>
+        </Box>
       </Wrapper>
     )
   }
