@@ -95,7 +95,6 @@ workflows:
       - deployment:
           requires:
             - check_vulnerabilities
-            - test_and_report
             - build
           filters:
             branches:
