@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+
 import {
   Flex,
   Box,
   Provider } from 'rebass'
 
+import {
+    BrowserRouter as Router,
+    Route
+} from 'react-router-dom'
+
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+
+import Home from '../../containers/Home'
+import About from '../../containers/About'
+import Posts from '../../containers/Posts'
 
 import { color } from '../../theme'
 
@@ -25,13 +35,20 @@ class App extends Component {
   render () {
     return (
       <Provider>
-        <Wrapper>
-          <Header />
-          <StyledMain>
-            {this.props.children}
-          </StyledMain>
-          <Footer />
-        </Wrapper>
+        <Router>
+          <Wrapper>
+
+            <Header />
+
+            <StyledMain>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/about' component={About}/>
+                <Route exact path='/posts' component={Posts}/>
+            </StyledMain>
+
+            <Footer />
+          </Wrapper>
+        </Router>
       </Provider>
     )
   }

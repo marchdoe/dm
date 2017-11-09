@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router'
 import { Heading } from 'rebass'
+
+import { Link } from 'react-router-dom'
 
 import { color } from '../../theme'
 
@@ -19,10 +20,10 @@ class Home extends Component {
     return (
       <Wrapper>
         <StyledHeading py={3} f={4} is={'h2'}>
-          <Link to={'about'}>About</Link>
+          <Link to='/about'>About</Link>
         </StyledHeading>
         <StyledHeading py={3} f={4} is={'h2'}>
-          <Link to={'posts'}>Random Links</Link>
+          <Link to='/posts'>Random Links</Link>
         </StyledHeading>
       </Wrapper>
     )

@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
+import promise from 'redux-promise'
+import { injectGlobal } from 'styled-components'
+
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import { Router, browserHistory } from 'react-router'
-import reducers from './reducers'
-import routes from './routes'
-import promise from 'redux-promise'
+import rootReducer from './reducers'
 
-import { injectGlobal } from 'styled-components'
+import App from './containers/App'
 import { color } from './theme'
 
 injectGlobal`
@@ -33,7 +34,7 @@ injectGlobal`
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory} routes={routes} />
+  <Provider store={createStoreWithMiddleware(rootReducer)}>
+    <App />
   </Provider>
   , document.getElementById('root'))

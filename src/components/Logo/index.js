@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import LogoImg from './logo.png'
@@ -11,7 +11,7 @@ const StyledImg = styled.img`
 class Logo extends Component {
   render () {
     return (
-      <Link to={'/'}>
+      <Link to='/'>
         <StyledImg src={LogoImg} alt={'logo'} />
       </Link>
     )
