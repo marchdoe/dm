@@ -93,7 +93,6 @@ class Positions extends Component {
 }
 
 function mapStateToProps (state) {
-  console.log({positions: state.positions.all})
   return { positions: state.positions.all }
 }
 
