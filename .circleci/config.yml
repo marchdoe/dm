@@ -70,6 +70,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               now build -t ${NOW_TOKEN} -n=doug-march --static
               now -t ${NOW_TOKEN} alias doug-march.com
+              now-start
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
               now build -t ${NOW_TOKEN} -n=doug-march --static
               now -t ${NOW_TOKEN} alias doug-march-dev.now.sh
