@@ -34,7 +34,6 @@ jobs:
   #           else
   #             yarn validate:dependencies || true
   #           fi
-
   build:
     docker:
       - image: circleci/node:latest

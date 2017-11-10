@@ -26,12 +26,13 @@
     "rebass": "^1.0.4",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
+    "serve": "^6.4.1",
     "styled-components": "^2.2.0"
   },
   "scripts": {
-    "deploy": "now",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "now-start": "serve --single ./build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
