@@ -42,16 +42,7 @@ jobs:
       - attach_workspace:
           at: ~/doug-march
       - run: yarn install
-      - run:
-          name: yarn build
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              CI=true PUBLIC_URL=https://doug-march.com yarn build
-            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              CI=true PUBLIC_URL=https://doug-march-dev.now.sh yarn build
-            else
-              echo "This failed miserably!"
-            fi
+      - run: yarn build
       - persist_to_workspace:
           root: .
           paths: .
@@ -68,10 +59,11 @@ jobs:
           name: Deploy & Alias.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              now build -t ${NOW_TOKEN} -n=doug-march --static
+              now -t ${NOW_TOKEN} -n=doug-march
               now -t ${NOW_TOKEN} alias doug-march.com
+              yarn now-start
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              now build -t ${NOW_TOKEN} -n=doug-march --static
+              now -t ${NOW_TOKEN} -n=doug-march
               now -t ${NOW_TOKEN} alias doug-march-dev.now.sh
             else
               echo "This failed miserably!"
