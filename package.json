@@ -32,6 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "now-start": "serve --single ./build",
+    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --yarn",
+    "alias": "now alias --token=$NOW_TOKEN",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

@@ -1,5 +1,4 @@
 {
-  "type": "docker",
-  "files": ["build"],
-  "public": true
+  "name": "doug-march",
+  "alias": "doug-march.com
 }
