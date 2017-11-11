@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import { fetchPosts } from '../../actions/index'
+import { fetchPosts } from '../../actions/actionCreators'
 
 import CodeIcon from '../../components/Icon/Code'
 

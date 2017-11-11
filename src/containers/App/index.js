@@ -7,8 +7,8 @@ import {
   Provider } from 'rebass'
 
 import {
-    BrowserRouter as Router,
-    Route
+  BrowserRouter as Router,
+  Route
 } from 'react-router-dom'
 
 import Header from '../../components/Header'
@@ -41,9 +41,9 @@ class App extends Component {
             <Header />
 
             <StyledMain>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/about' component={About}/>
-                <Route exact path='/posts' component={Posts}/>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/about' component={About}/>
+              <Route exact path='/posts' component={Posts}/>
             </StyledMain>
 
             <Footer />

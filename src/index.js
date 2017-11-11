@@ -1,12 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-import promise from 'redux-promise'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { injectGlobal } from 'styled-components'
 
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import rootReducer from './reducers'
+import store from './store'
 
 import App from './containers/App'
 import { color } from './theme'
@@ -31,10 +28,7 @@ injectGlobal`
   }
 `
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
-
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(rootReducer)}>
+  <Provider store={store}>
     <App />
-  </Provider>
-  , document.getElementById('root'))
+  </Provider>, document.getElementById('root'))

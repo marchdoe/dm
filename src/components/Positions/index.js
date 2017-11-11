@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import marked from 'marked'
 import styled from 'styled-components'
-import { fetchPositions } from '../../actions/index'
+import { fetchPositions } from '../../actions/actionCreators'
 
 import {
   Box,
@@ -96,4 +96,4 @@ function mapStateToProps (state) {
   return { positions: state.positions.all }
 }
 
-export default connect(mapStateToProps, { fetchPositions })(Positions)
+export default connect(mapStateToProps, {fetchPositions})(Positions)
