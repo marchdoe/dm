@@ -40,7 +40,7 @@ const StyledBox = styled(Box)`
     li:before {
       content: "•";
       margin: 0 .5em 0 -1em;
-      color: ${color.blue};
+      color: ${color.primary};
     }
   }
 `

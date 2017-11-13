@@ -19,7 +19,7 @@ injectGlobal`
 
   a {
     text-decoration: none;
-    color: #666;
+    color: ${color.gray8};
     transition: all .2s ease;
 
     &:hover {

@@ -4,8 +4,8 @@ export const border = {
 }
 
 export const color = {
-  blue: '#0088cc',
-  green: '#77c241',
+  primary: '#0088cc',
+  secondary: '#77c241',
   white: '#ffffff',
   gray0: '#f8f9f9',
   gray1: '#ebedee',
@@ -25,16 +25,16 @@ export const font = {
   title: ''
 }
 
-// export const size = {
-//   xl: 1170,
-//   desktop: 992,
-//   tablet: 768,
-//   phone: 376
-// }
+export const size = {
+  xl: 1170,
+  desktop: 992,
+  tablet: 768,
+  phone: 376
+}
 
 export default {
   border,
   color,
-  font
-  // size
+  font,
+  size
 }

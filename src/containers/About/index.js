@@ -23,11 +23,11 @@ class About extends Component {
       <Wrapper wrap>
         <Box w={[ 1 ]} p={3}>
 
-          <Heading mb={3} f={1} is='h4' color={color.green} caps>Experience</Heading>
+          <Heading mb={3} f={1} is='h4' color={color.secondary} caps>Experience</Heading>
 
           <Positions />
 
-          <Heading mb={3} f={1} is='h4' color={color.green} caps>Education</Heading>
+          <Heading mb={3} f={1} is='h4' color={color.secondary} caps>Education</Heading>
 
           <Flex wrap mb={3}>
             <Box width={1}>

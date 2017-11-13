@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `
 
 const StyledHeading = styled(Heading)`
-  border-bottom: 1px dotted ${color.gray2};
+  border-bottom: 2px dotted ${color.gray2};
   color: ${color.gray7};
 `
 
