@@ -21,7 +21,7 @@ const Wrapper = styled(Box)`
 
 const StyledArticle = styled(Box)`
   border-bottom: 2px dotted ${color.gray2};
-  
+
   &:last-child { border: 0; }
 `
 

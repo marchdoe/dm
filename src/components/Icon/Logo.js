@@ -1,23 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import styled, { keyframes} from 'styled-components'
+import styled from 'styled-components'
 import { color } from '../../theme'
 
-const rotate360 = keyframes`
-  from {
-    transform-origin: center center;
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform-origin: center center;
-    transform: rotate(360deg);
-  }
-`
+// const rotate360 = keyframes`
+//   from {
+//     transform-origin: center center;
+//     transform: rotate(0deg);
+//   }
+//
+//   to {
+//     transform-origin: center center;
+//     transform: rotate(360deg);
+//   }
+// `
 
 const Rotate = styled.g`
-  animation: ${rotate360} 1.3333s linear infinite;
+  ${'' /* animation: ${rotate360} 1.3333s linear infinite; */}
 `
 
 const LogoIcon = ({ iconWidth, iconHeight }) => {
