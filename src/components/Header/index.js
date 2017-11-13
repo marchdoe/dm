@@ -9,9 +9,8 @@ const StyledHeader = styled.header`
   background-color: ${color.white};
   border-bottom: 8px solid ${color.gray2};
   text-align: center;
-  min-height: 100px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `
 
 class Header extends Component {

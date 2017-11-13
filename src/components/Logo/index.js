@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import LogoImg from './logo.png'
+import LogoIcon from '../Icon/Logo'
 
-const StyledImg = styled.img`
-  padding-left: 16px;
+const StyledLink = styled(Link)`
+  padding-left: 18px;
 `
 
 class Logo extends Component {
   render () {
     return (
-      <Link to='/'>
-        <StyledImg src={LogoImg} alt={'logo'} />
-      </Link>
+      <StyledLink to='/'>
+        <LogoIcon />
+      </StyledLink>
     )
   }
 }
