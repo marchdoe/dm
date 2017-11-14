@@ -11,7 +11,7 @@ const StyledLink = styled(Link)`
 class Logo extends Component {
   render () {
     return (
-      <StyledLink to='/' >
+      <StyledLink to='/' title='back to home' >
         <LogoIcon />
       </StyledLink>
     )
