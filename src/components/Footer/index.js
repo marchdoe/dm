@@ -6,9 +6,9 @@ import { color } from '../../theme'
 const StyledFooter = styled.footer`
   font-size: 11px;
   text-align: center;
-  border-top: 1px solid ${color.gray1};
-  background-color: ${color.gray0};
-  color: ${color.gray5};
+  border-top: 2px solid ${color.gray2};
+  background-color: ${color.white};
+  color: ${color.gray8};
   text-transform: uppercase;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
   span {
     margin-right: .6rem;
     font-weight: bold;
-    color: ${color.gray7};
+    color: ${color.gray9};
   }
 `
 
