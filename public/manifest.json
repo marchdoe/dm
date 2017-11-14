@@ -1,6 +1,8 @@
 {
   "short_name": "Doug March",
   "name": "Personal Site of Doug March",
+  "theme_color": "#0088cc",
+  "background_color": "#f8f9f9",
   "icons": [
     {
       "src": "favicon.ico",
