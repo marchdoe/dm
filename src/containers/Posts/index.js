@@ -48,12 +48,12 @@ class Posts extends Component {
 
       return (
         <StyledArticle py={[3, 3, 4]} key={post.sys.id}>
-          <StyledHeading f={4} is={'h2'}>
+          <StyledHeading fontSize={4} is={'h2'}>
             <Link href={post.fields.source} target='_blank'>
               {post.fields.title}
             </Link>
-            {hasCodeSource ? (<CodeSourceLink href={post.fields.github} target='_blank' pt={2} f={2}><CodeIcon /></CodeSourceLink>) : ('')}
-            {hasExcerpt ? (<Text pt={2} f={2}>{post.fields.excerpt}</Text>) : ('')}
+            {hasCodeSource ? (<CodeSourceLink href={post.fields.github} target='_blank' pt={2} fontSize={2}><CodeIcon /></CodeSourceLink>) : ('')}
+            {hasExcerpt ? (<Text pt={2} fontSize={2}>{post.fields.excerpt}</Text>) : ('')}
           </StyledHeading>
         </StyledArticle>
       )

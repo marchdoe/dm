@@ -25,6 +25,7 @@ const StyledSecondaryTitle = styled(Small)`
 
 const StyledPositionTitle = styled(Heading)`
   border-bottom: 1px solid ${color.gray1};
+  width: 100%;
 `
 
 const StyledBox = styled(Box)`
@@ -59,14 +60,14 @@ class Positions extends Component {
   renderPositions () {
     return this.props.positions.sort((a, b) => a.fields.order > b.fields.order).map((position, index) => {
       return (
-        <Flex wrap is='section' mb={[3, 3, 3, 4]} key={position.sys.id}>
-          <StyledPositionTitle is='h2' w={1} pb={[1 ,2, 3]} mb={[1 ,2, 3]} f={3}>
+        <Flex flexWrap='wrap' is='section' mb={[3, 3, 3, 4]} key={position.sys.id}>
+          <StyledPositionTitle is='h2' pb={[1 ,2, 3]} mb={[1 ,2, 3]} fontSize={3}>
             {position.fields.company}
-            <Small ml={3} f={1}>{position.fields.date}</Small>
+            <Small ml={3} fontSize={1}>{position.fields.date}</Small>
           </StyledPositionTitle>
 
           <Box mb={4} width={[1, 1 / 3, 1 / 4]}>
-            <StyledTitle f={2} is='h3'>
+            <StyledTitle fontSize={2} is='h3'>
               {position.fields.title}
               <StyledSecondaryTitle>
                 {position.fields.secondaryTitle}

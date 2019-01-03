@@ -19,10 +19,10 @@ class Home extends Component {
   render () {
     return (
       <Wrapper>
-        <StyledHeading py={3} f={4} is={'h2'}>
+        <StyledHeading py={3} fontSize={4} is={'h2'}>
           <Link to='/about'>About</Link>
         </StyledHeading>
-        <StyledHeading py={3} f={4} is={'h2'}>
+        <StyledHeading py={3} fontSize={4} is={'h2'}>
           <Link to='/posts'>Random Links</Link>
         </StyledHeading>
       </Wrapper>

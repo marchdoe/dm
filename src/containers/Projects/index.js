@@ -35,7 +35,7 @@
 //     return this.props.projects.map((project, index) => {
 //       return (
 //         <StyledArticle pr={4} py={3} key={project.sys.id}>
-//           <StyledHeading pb={2} f={4} is={'h2'}>
+//           <StyledHeading pb={2} fontSize={4} is={'h2'}>
 //             <Link href={project.fields.url}>
 //               {project.fields.title}
 //             </Link>

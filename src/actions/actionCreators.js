@@ -41,7 +41,7 @@ export const fetchPositions = () => {
   return function(dispatch, getState) {
     getEntries({
       content_type: 'positions',
-      order: ''
+      order: 'fields.order'
     })
       .then(response => {
         dispatch(setPositions(response.items))
