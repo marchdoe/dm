@@ -9,11 +9,9 @@
     "url": "https://github.com/marchdoe/doug-march.com.git"
   },
   "dependencies": {
-    "@storybook/addon-actions": "4.2.0-alpha.8",
-    "@storybook/addon-info": "4.2.0-alpha.8",
-    "@storybook/addon-links": "4.2.0-alpha.8",
-    "@storybook/addon-options": "4.2.0-alpha.8",
-    "@storybook/react": "4.2.0-alpha.8",
+    "@storybook/addon-info": "v6.0.0-alpha.31",
+    "@storybook/addon-options": "v6.0.0-alpha.31",
+    "@storybook/react": "v6.0.0-alpha.31",
     "contentful": "^5.0.3",
     "polished": "^1.7.0",
     "react": "^16.0.0",
